@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="VET_ROVING" directorySegmentName="seg_0" id="C7704620-57D4-ED3C-666F-0737EBED1F60">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-28 01:00:11 UTC</createdTime>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<sourcePk>ADF47FD5-CC05-125F-5901-F2C33CA50A26</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>roves</nameOnSource>
+<nameOnTarget> </nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7C80D55B-37F2-32F3-65D6-29C8C19FC4CE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>CDDC1774-6239-962B-70C1-C8BFD9516487</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

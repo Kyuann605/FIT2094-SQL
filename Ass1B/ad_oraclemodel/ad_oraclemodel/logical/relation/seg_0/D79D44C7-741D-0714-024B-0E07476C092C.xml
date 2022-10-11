@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="DRUG_PRESCRIPTION" directorySegmentName="seg_0" id="D79D44C7-741D-0714-024B-0E07476C092C">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 18:41:21 UTC</createdTime>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<sourcePk>311C36E7-4DD9-F13B-1C23-F78E9F1A02D1</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>contains</nameOnSource>
+<nameOnTarget> </nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D9CDB452-A578-4A81-360B-55D50138CC46</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8FC38E08-84C6-B2F8-A983-3A54BD63E220</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

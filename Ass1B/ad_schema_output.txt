@@ -1,0 +1,701 @@
+SQL> 
+SQL> DROP TABLE clinic CASCADE CONSTRAINTS;
+
+Table CLINIC dropped.
+
+SQL> 
+SQL> DROP TABLE clinic_roving CASCADE CONSTRAINTS;
+
+Table CLINIC_ROVING dropped.
+
+SQL> 
+SQL> DROP TABLE drug CASCADE CONSTRAINTS;
+
+Table DRUG dropped.
+
+SQL> 
+SQL> DROP TABLE pet CASCADE CONSTRAINTS;
+
+Table PET dropped.
+
+SQL> 
+SQL> DROP TABLE pet_owner CASCADE CONSTRAINTS;
+
+Table PET_OWNER dropped.
+
+SQL> 
+SQL> DROP TABLE pet_type CASCADE CONSTRAINTS;
+
+Table PET_TYPE dropped.
+
+SQL> 
+SQL> DROP TABLE prescription CASCADE CONSTRAINTS;
+
+Table PRESCRIPTION dropped.
+
+SQL> 
+SQL> DROP TABLE service CASCADE CONSTRAINTS;
+
+Table SERVICE dropped.
+
+SQL> 
+SQL> DROP TABLE specialist CASCADE CONSTRAINTS;
+
+Table SPECIALIST dropped.
+
+SQL> 
+SQL> DROP TABLE vet CASCADE CONSTRAINTS;
+
+Table VET dropped.
+
+SQL> 
+SQL> DROP TABLE visit CASCADE CONSTRAINTS;
+
+Table VISIT dropped.
+
+SQL> 
+SQL> -- predefined type, no DDL - MDSYS.SDO_GEOMETRY
+SQL> 
+SQL> -- predefined type, no DDL - XMLTYPE
+SQL> 
+SQL> CREATE TABLE clinic (
+  2      clinic_id       NUMBER(7) NOT NULL,
+  3      clinic_name     VARCHAR2(30) NOT NULL,
+  4      clinic_address  VARCHAR2(50) NOT NULL,
+  5      clinic_phone    NUMBER(15) NOT NULL
+  6  );
+
+Table CLINIC created.
+
+SQL> 
+SQL> COMMENT ON COLUMN clinic.clinic_id IS
+  2      'clinic id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN clinic.clinic_name IS
+  2      'clinic name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN clinic.clinic_address IS
+  2      'clinic address';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN clinic.clinic_phone IS
+  2      'clinic phone number';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE clinic ADD CONSTRAINT clinic_pk PRIMARY KEY ( clinic_id );
+
+Table CLINIC altered.
+
+SQL> 
+SQL> CREATE TABLE clinic_roving (
+  2      clinic_id     NUMBER(7) NOT NULL,
+  3      vet_id        NUMBER(7) NOT NULL,
+  4      roving_count  NUMBER(3) NOT NULL
+  5  );
+
+Table CLINIC_ROVING created.
+
+SQL> 
+SQL> COMMENT ON COLUMN clinic_roving.clinic_id IS
+  2      'clinic id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN clinic_roving.vet_id IS
+  2      'vet id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN clinic_roving.roving_count IS
+  2      'roving count';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE clinic_roving ADD CONSTRAINT clinic_roving_pk PRIMARY KEY ( vet_id,
+  2                                                                          clinic_id );
+
+Table CLINIC_ROVING altered.
+
+SQL> 
+SQL> CREATE TABLE drug (
+  2      drug_id           NUMBER(7) NOT NULL,
+  3      drug_name         VARCHAR2(30) NOT NULL,
+  4      drug_cost         NUMBER(10, 2) NOT NULL,
+  5      drug_instruction  VARCHAR2(50) NOT NULL
+  6  );
+
+Table DRUG created.
+
+SQL> 
+SQL> COMMENT ON COLUMN drug.drug_id IS
+  2      'drug id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN drug.drug_name IS
+  2      'drug name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN drug.drug_cost IS
+  2      'drug cost';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN drug.drug_instruction IS
+  2      'drug instruction';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE drug ADD CONSTRAINT drug_pk PRIMARY KEY ( drug_id );
+
+Table DRUG altered.
+
+SQL> 
+SQL> CREATE TABLE pet (
+  2      animal_id         NUMBER(7) NOT NULL,
+  3      animal_gender     VARCHAR2(10) NOT NULL,
+  4      animal_type       VARCHAR2(50) NOT NULL,
+  5      animal_birthdate  DATE NOT NULL,
+  6      animal_deceased   CHAR(1) NOT NULL,
+  7      owner_id          NUMBER(7) NOT NULL,
+  8      animal_type_id    NUMBER(7) NOT NULL
+  9  );
+
+Table PET created.
+
+SQL> 
+SQL> ALTER TABLE pet
+  2      ADD CONSTRAINT chk_animal_deceased CHECK ( animal_deceased IN ( 'N', 'Y' ) );
+
+Table PET altered.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet.animal_id IS
+  2      'animal id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet.animal_gender IS
+  2      'animal gender';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet.animal_type IS
+  2      'animal type';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet.animal_birthdate IS
+  2      'animal date of birth';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet.animal_deceased IS
+  2      'aniaml deceased';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet.owner_id IS
+  2      'owner id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet.animal_type_id IS
+  2      'pet type id';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE pet ADD CONSTRAINT pet_pk PRIMARY KEY ( animal_id );
+
+Table PET altered.
+
+SQL> 
+SQL> CREATE TABLE pet_owner (
+  2      owner_id            NUMBER(7) NOT NULL,
+  3      owner_fname         VARCHAR2(50) NOT NULL,
+  4      owner_lname         VARCHAR2(50) NOT NULL,
+  5      owner_phone         VARCHAR2(15) NOT NULL,
+  6      owner_add_street    VARCHAR2(50) NOT NULL,
+  7      owner_add_town      VARCHAR2(50) NOT NULL,
+  8      owner_add_postcode  NUMBER(10) NOT NULL,
+  9      vet_id              NUMBER(7) NOT NULL
+ 10  );
+
+Table PET_OWNER created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet_owner.owner_id IS
+  2      'owner id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet_owner.owner_fname IS
+  2      'owner first name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet_owner.owner_lname IS
+  2      'owner last name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet_owner.owner_phone IS
+  2      'owner phone number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet_owner.owner_add_street IS
+  2      'address street';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet_owner.owner_add_town IS
+  2      'address town';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet_owner.owner_add_postcode IS
+  2      'address postcode';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet_owner.vet_id IS
+  2      'vet id';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE pet_owner ADD CONSTRAINT pet_owner_pk PRIMARY KEY ( owner_id );
+
+Table PET_OWNER altered.
+
+SQL> 
+SQL> CREATE TABLE pet_type (
+  2      animal_type_id  NUMBER(7) NOT NULL,
+  3      animal_type     VARCHAR2(20) NOT NULL
+  4  );
+
+Table PET_TYPE created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet_type.animal_type_id IS
+  2      'pet type id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN pet_type.animal_type IS
+  2      'animal type';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE pet_type ADD CONSTRAINT pet_type_pk PRIMARY KEY ( animal_type_id );
+
+Table PET_TYPE altered.
+
+SQL> 
+SQL> ALTER TABLE pet_type ADD CONSTRAINT un_animal_type UNIQUE ( animal_type );
+
+Table PET_TYPE altered.
+
+SQL> 
+SQL> CREATE TABLE prescription (
+  2      prescription_id               NUMBER(7) NOT NULL,
+  3      prescription_dose             NUMBER(5) NOT NULL,
+  4      prescription_frequency_admin  NUMBER(5) NOT NULL,
+  5      prescription_qty_supplied     NUMBER(10) NOT NULL,
+  6      visit_datetime                DATE NOT NULL,
+  7      drug_id                       NUMBER(7) NOT NULL,
+  8      animal_id                     NUMBER(7) NOT NULL
+  9  );
+
+Table PRESCRIPTION created.
+
+SQL> 
+SQL> COMMENT ON COLUMN prescription.prescription_id IS
+  2      'prescription id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN prescription.prescription_dose IS
+  2      'prescription dose';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN prescription.prescription_frequency_admin IS
+  2      'prescription frequency administration';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN prescription.prescription_qty_supplied IS
+  2      'quatity supplied';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN prescription.visit_datetime IS
+  2      'visit datetime';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN prescription.drug_id IS
+  2      'drug id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN prescription.animal_id IS
+  2      'animal id';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE prescription
+  2      ADD CONSTRAINT prescription_pk PRIMARY KEY ( prescription_id,
+  3                                                   visit_datetime,
+  4                                                   drug_id,
+  5                                                   animal_id );
+
+Table PRESCRIPTION altered.
+
+SQL> 
+SQL> CREATE TABLE service (
+  2      service_code    NUMBER(7) NOT NULL,
+  3      service_desc    VARCHAR2(100) NOT NULL,
+  4      service_cost    NUMBER(10, 2) NOT NULL,
+  5      visit_datetime  DATE NOT NULL,
+  6      animal_id       NUMBER(7) NOT NULL
+  7  );
+
+Table SERVICE created.
+
+SQL> 
+SQL> COMMENT ON COLUMN service.service_code IS
+  2      'service code';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN service.service_desc IS
+  2      'service description';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN service.service_cost IS
+  2      'service cost';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN service.visit_datetime IS
+  2      'visit datetime';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN service.animal_id IS
+  2      'animal id';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE service
+  2      ADD CONSTRAINT service_pk PRIMARY KEY ( service_code,
+  3                                              visit_datetime,
+  4                                              animal_id );
+
+Table SERVICE altered.
+
+SQL> 
+SQL> ALTER TABLE service ADD CONSTRAINT uk_description UNIQUE ( service_desc );
+
+Table SERVICE altered.
+
+SQL> 
+SQL> CREATE TABLE specialist (
+  2      specialist_id    NUMBER(7) NOT NULL,
+  3      specialist_name  VARCHAR2(30) NOT NULL
+  4  );
+
+Table SPECIALIST created.
+
+SQL> 
+SQL> COMMENT ON COLUMN specialist.specialist_id IS
+  2      'specialist id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN specialist.specialist_name IS
+  2      'specialist name';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE specialist ADD CONSTRAINT specialist_pk PRIMARY KEY ( specialist_id );
+
+Table SPECIALIST altered.
+
+SQL> 
+SQL> CREATE TABLE vet (
+  2      vet_id             NUMBER(7) NOT NULL,
+  3      vet_givenname      VARCHAR2(20) NOT NULL,
+  4      vet_familyname     VARCHAR2(20) NOT NULL,
+  5      vet_phone          NUMBER(15) NOT NULL,
+  6      vet_date_employed  DATE NOT NULL,
+  7      specialist_id      NUMBER(7),
+  8      clinic_id          NUMBER(7) NOT NULL
+  9  );
+
+Table VET created.
+
+SQL> 
+SQL> COMMENT ON COLUMN vet.vet_id IS
+  2      'vet id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN vet.vet_givenname IS
+  2      'vet given  name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN vet.vet_familyname IS
+  2      'vet family name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN vet.vet_phone IS
+  2      'vet phone';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN vet.vet_date_employed IS
+  2      'vet employed date';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN vet.specialist_id IS
+  2      'specialist id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN vet.clinic_id IS
+  2      'clinic id';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE vet ADD CONSTRAINT vet_pk PRIMARY KEY ( vet_id );
+
+Table VET altered.
+
+SQL> 
+SQL> CREATE TABLE visit (
+  2      animal_id             NUMBER(7) NOT NULL,
+  3      visit_datetime        DATE NOT NULL,
+  4      visit_length          NUMBER(5) NOT NULL,
+  5      visit_notes           VARCHAR2(50) NOT NULL,
+  6      visit_payment_method  VARCHAR2(10) NOT NULL,
+  7      visit_payment_total   NUMBER(10, 2) NOT NULL,
+  8      vet_id                NUMBER(7) NOT NULL,
+  9      clinic_id             NUMBER(7) NOT NULL
+ 10  );
+
+Table VISIT created.
+
+SQL> 
+SQL> COMMENT ON COLUMN visit.animal_id IS
+  2      'animal id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN visit.visit_datetime IS
+  2      'visit datetime';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN visit.visit_length IS
+  2      'visit length';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN visit.visit_notes IS
+  2      'visit notes';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN visit.visit_payment_method IS
+  2      'visit payment method';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN visit.visit_payment_total IS
+  2      'visit payment total';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN visit.vet_id IS
+  2      'vet id';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN visit.clinic_id IS
+  2      'clinic id';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE visit ADD CONSTRAINT visit_pk PRIMARY KEY ( visit_datetime,
+  2                                                          animal_id );
+
+Table VISIT altered.
+
+SQL> 
+SQL> ALTER TABLE clinic_roving
+  2      ADD CONSTRAINT clinic_roving FOREIGN KEY ( clinic_id )
+  3          REFERENCES clinic ( clinic_id );
+
+Table CLINIC_ROVING altered.
+
+SQL> 
+SQL> ALTER TABLE vet
+  2      ADD CONSTRAINT clinic_vet FOREIGN KEY ( clinic_id )
+  3          REFERENCES clinic ( clinic_id );
+
+Table VET altered.
+
+SQL> 
+SQL> ALTER TABLE visit
+  2      ADD CONSTRAINT clinic_visit FOREIGN KEY ( clinic_id )
+  3          REFERENCES clinic ( clinic_id );
+
+Table VISIT altered.
+
+SQL> 
+SQL> ALTER TABLE prescription
+  2      ADD CONSTRAINT drug_prescription FOREIGN KEY ( drug_id )
+  3          REFERENCES drug ( drug_id );
+
+Table PRESCRIPTION altered.
+
+SQL> 
+SQL> ALTER TABLE pet
+  2      ADD CONSTRAINT owner_pet FOREIGN KEY ( owner_id )
+  3          REFERENCES pet_owner ( owner_id );
+
+Table PET altered.
+
+SQL> 
+SQL> ALTER TABLE visit
+  2      ADD CONSTRAINT pet_visit FOREIGN KEY ( animal_id )
+  3          REFERENCES pet ( animal_id );
+
+Table VISIT altered.
+
+SQL> 
+SQL> ALTER TABLE vet
+  2      ADD CONSTRAINT specialist_vet FOREIGN KEY ( specialist_id )
+  3          REFERENCES specialist ( specialist_id );
+
+Table VET altered.
+
+SQL> 
+SQL> ALTER TABLE pet
+  2      ADD CONSTRAINT type_pet FOREIGN KEY ( animal_type_id )
+  3          REFERENCES pet_type ( animal_type_id );
+
+Table PET altered.
+
+SQL> 
+SQL> ALTER TABLE pet_owner
+  2      ADD CONSTRAINT vet_owner FOREIGN KEY ( vet_id )
+  3          REFERENCES vet ( vet_id );
+
+Table PET_OWNER altered.
+
+SQL> 
+SQL> ALTER TABLE clinic_roving
+  2      ADD CONSTRAINT vet_roving FOREIGN KEY ( vet_id )
+  3          REFERENCES vet ( vet_id );
+
+Table CLINIC_ROVING altered.
+
+SQL> 
+SQL> ALTER TABLE visit
+  2      ADD CONSTRAINT vet_visit FOREIGN KEY ( vet_id )
+  3          REFERENCES vet ( vet_id );
+
+Table VISIT altered.
+
+SQL> 
+SQL> ALTER TABLE prescription
+  2      ADD CONSTRAINT visit_prescription FOREIGN KEY ( visit_datetime,
+  3                                                      animal_id )
+  4          REFERENCES visit ( visit_datetime,
+  5                             animal_id );
+
+Table PRESCRIPTION altered.
+
+SQL> 
+SQL> ALTER TABLE service
+  2      ADD CONSTRAINT visit_service FOREIGN KEY ( visit_datetime,
+  3                                                 animal_id )
+  4          REFERENCES visit ( visit_datetime,
+  5                             animal_id );
+
+Table SERVICE altered.
+
+SQL> 
+SQL> spool off

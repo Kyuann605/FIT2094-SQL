@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8FC38E08-84C6-B2F8-A983-3A54BD63E220" name="PRESCRIPTION">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 16:04:27 UTC</createdTime>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="prescription_id" id="FA9C2606-3974-89D0-86E7-8D66194BD7CB">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 20:29:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[prescription id]]></commentInRDBMS>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prescription_dose" id="C25CA54C-CB97-5855-6E61-63F4160E7122">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 20:29:30 UTC</createdTime>
+<commentInRDBMS><![CDATA[prescription dose]]></commentInRDBMS>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prescription_frequency_admin" id="07240CBF-99BC-75E3-05E4-BEA3AA057CD4">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 20:29:30 UTC</createdTime>
+<commentInRDBMS><![CDATA[prescription frequency administration]]></commentInRDBMS>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prescription_qty_supplied" id="D39CBA8B-FBE4-4379-FDCC-B0E6E7194E4D">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 16:05:00 UTC</createdTime>
+<commentInRDBMS><![CDATA[quatity supplied]]></commentInRDBMS>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="visit_datetime" id="8B84B6C3-791D-5925-FD52-4716367C95B8">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 18:39:19 UTC</createdTime>
+<commentInRDBMS><![CDATA[visit datetime]]></commentInRDBMS>
+<generatorID>DEDBBE6E-3BC1-66B5-7CC2-C787BD92D0AD</generatorID>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<referedAttribute>8C0BED05-09F7-040C-D7BA-6871E86798C2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="drug_id" id="8C34C530-8E99-193A-5B15-6B6874B3349F">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 18:41:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[drug id]]></commentInRDBMS>
+<generatorID>D79D44C7-741D-0714-024B-0E07476C092C</generatorID>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<referedAttribute>4FD11A32-0F66-D73F-7E94-60564F353F22</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="animal_id" id="2AECA371-2B66-A3CD-5C10-0C159C65DA46">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 20:36:55 UTC</createdTime>
+<commentInRDBMS><![CDATA[animal id]]></commentInRDBMS>
+<generatorID>DEDBBE6E-3BC1-66B5-7CC2-C787BD92D0AD</generatorID>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<referedAttribute>EBA3BB06-2575-A561-4C0E-8F7916515AAD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="13015BDF-56B8-4DB4-B589-674DE328A387" name="PRESCRIPTION PK">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 16:05:18 UTC</createdTime>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FA9C2606-3974-89D0-86E7-8D66194BD7CB</attributeRef>
+<attributeRef>8B84B6C3-791D-5925-FD52-4716367C95B8</attributeRef>
+<attributeRef>8C34C530-8E99-193A-5B15-6B6874B3349F</attributeRef>
+<attributeRef>2AECA371-2B66-A3CD-5C10-0C159C65DA46</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

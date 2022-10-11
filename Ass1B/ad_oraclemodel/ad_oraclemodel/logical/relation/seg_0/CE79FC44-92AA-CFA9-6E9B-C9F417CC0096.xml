@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="VET_VISIT" directorySegmentName="seg_0" id="CE79FC44-92AA-CFA9-6E9B-C9F417CC0096">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 18:03:31 UTC</createdTime>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<sourcePk>ADF47FD5-CC05-125F-5901-F2C33CA50A26</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>attends</nameOnSource>
+<nameOnTarget> </nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7C80D55B-37F2-32F3-65D6-29C8C19FC4CE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>94CABD69-21C6-F4EC-81AC-D999A3A92490</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

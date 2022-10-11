@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6389E044-DBC4-8A7C-7773-BCF2715397C5" name="PET_TYPE">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-28 00:19:35 UTC</createdTime>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="animal_type_id" id="C3DA5556-5CB8-A03B-FE73-5451D1D250BF">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-28 00:19:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[pet type id]]></commentInRDBMS>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="animal_type" id="666883CE-90B4-0DD9-C0B6-058DEA45768C">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-28 00:19:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[animal type]]></commentInRDBMS>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="335C6354-9AA2-618B-FAE7-8E156C795169" name="PET_TYPE PK">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-28 00:19:55 UTC</createdTime>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C3DA5556-5CB8-A03B-FE73-5451D1D250BF</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="90A0F557-65A7-550B-8170-03443B8F65D5" name="un_animal_type">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-28 00:25:48 UTC</createdTime>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<newElementsIDs>666883CE-90B4-0DD9-C0B6-058DEA45768C</newElementsIDs>
+<usedAttributes>
+<attributeRef>666883CE-90B4-0DD9-C0B6-058DEA45768C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CDDC1774-6239-962B-70C1-C8BFD9516487" name="CLINIC_ROVING">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-28 00:56:28 UTC</createdTime>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="clinic_id" id="BA113A67-DF25-FC11-73D9-96A8131C6A6B">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-28 00:59:17 UTC</createdTime>
+<commentInRDBMS><![CDATA[clinic id]]></commentInRDBMS>
+<generatorID>92BB2623-2EB7-089A-B8D3-667C08BDA085</generatorID>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<referedAttribute>C3F5D1B5-EFD3-5D79-BE43-89438A56769D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="vet_id" id="B0B02849-95A4-8DE8-D45A-A57096A6EF33">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-28 01:00:11 UTC</createdTime>
+<commentInRDBMS><![CDATA[vet id]]></commentInRDBMS>
+<generatorID>C7704620-57D4-ED3C-666F-0737EBED1F60</generatorID>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<referedAttribute>987268DF-C45A-B9C0-2F70-6B1B6E0F6385</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="roving_count" id="C58D6E01-19BA-7F9F-3B93-7A0DD68E80CC">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-28 00:56:41 UTC</createdTime>
+<commentInRDBMS><![CDATA[roving count]]></commentInRDBMS>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C36C7737-0335-9B13-4E9C-30E40E4E6A49" name="CLINIC_ROVING PK">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-28 01:00:47 UTC</createdTime>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B0B02849-95A4-8DE8-D45A-A57096A6EF33</attributeRef>
+<attributeRef>BA113A67-DF25-FC11-73D9-96A8131C6A6B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

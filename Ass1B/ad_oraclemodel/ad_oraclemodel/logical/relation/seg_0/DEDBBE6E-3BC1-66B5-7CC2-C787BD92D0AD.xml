@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="VISIT_PRESCRIPTION" directorySegmentName="seg_0" id="DEDBBE6E-3BC1-66B5-7CC2-C787BD92D0AD">
+<createdBy>kgoh0018</createdBy>
+<createdTime>2021-04-27 18:39:19 UTC</createdTime>
+<ownerDesignName>ad_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="09C6DFA9-4F69-7BDD-1C2D-84DE79F164E8" value="true"/>
+</engineerTo>
+<sourcePk>D81F6927-092F-2FC9-6661-4F33EAD522C9</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>obtains</nameOnSource>
+<nameOnTarget> </nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>94CABD69-21C6-F4EC-81AC-D999A3A92490</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8FC38E08-84C6-B2F8-A983-3A54BD63E220</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
